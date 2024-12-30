@@ -12,11 +12,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-mg2$)e9v=utt5a%39@mdxvq5nhjufx9&klhxy!)sb$*pk&^rh&'
-
+SECRET_KEY = os.getenv("SECRET_KEY", "your-secret-key")
+DEBUG = os.getenv("DEBUG", "False").lower() in ("true", "1")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -117,7 +118,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
+        "default": dj_database_url.config(default=os.getenv("DATABASE_URL"))
         conn_max_age=600
     )
 }
