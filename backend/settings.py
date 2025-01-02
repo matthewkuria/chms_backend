@@ -87,7 +87,9 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # For Next.js frontend during development
     "http://localhost:3001",  # For Next.js frontend during development
     "https://ncci-chms.vercel.app",
+    "http://ncmi-ke.org",
     "https://ncmi-ke.org",
+    "www.ncmi-ke.org",
 ]
 CORS_ALLOW_ALL_ORIGINS = False
 

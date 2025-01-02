@@ -10,6 +10,8 @@ class EventViewSet(viewsets.ModelViewSet):
     serializer_class = EventSerializer
     parser_classes = (MultiPartParser, FormParser)
     permission_classes = [AllowAny]
+
+    
     
 # ViewSet for Attendance model
 class AttendanceViewSet(viewsets.ModelViewSet):
